@@ -1,0 +1,74 @@
+.switcher { width: 220px; height: 144px; background: url(../images/switcher-bg.png) 0 -144px no-repeat; position: absolute; top: 0 !important; left: 0; z-index: 1000; }
+
+/* Main header */
+
+.main-header { margin: 0 auto 0 auto; }
+
+	.main-content .header { background: url(../images/checkout-header-bg-dark-1.jpg) 0 0 repeat; border-top-left-radius: 4px; border-top-right-radius: 4px; }
+		.main-content .header .clear { height: 2px; line-height: 2px; background: url(../images/border-10.png) bottom left repeat-x; }
+
+		.main-content .header .left { background: url(../images/border-13.png) top right repeat-y; }
+			.main-content .header .right h2 { color: #5ed400; font-size: 48px; line-height: 52px; font-weight: normal; letter-spacing: 0; }
+			.main-content .header .right h3 { color: #cecece; font-size: 12px; line-height: 22px; }
+			.main-content .header .right h4 { color: #fff; }
+					.main-content .header .item .text h3 a { color: #feebb7; }
+					.main-content .header .item .text h3 a:hover { color: #ff6600; }
+			.main-content .header .item p { color: #cecece; }
+
+
+/* Checkout items */
+
+	.checkout-item a { color: #ff6600; }
+	.checkout-item a:hover { color: #ff5400; }
+	.checkout-item .message { border: rgba(255, 255, 255, 0.2) 1px solid; }
+		.checkout-item .message span { background-color: rgba(0, 0, 0, 0.2); border: rgba(0, 0, 0, 0.3) 1px solid; color: #fff; }
+		.checkout-item .input-text-1 { opacity: 1; box-shadow: rgba(0, 0, 0, 0.3) 0 2px 0; }
+		.checkout-item .input-text-1:focus { opacity: 1; }
+		.checkout-item .error .input-text-1 { background: #ffb98b; border: none; box-shadow: none; color: #1e1e1e; font-weight: bold; }
+		.checkout-item .error label { color: #ff6600; }
+		.checkout-item .error span { color: #ff6600; }
+
+	.billing-address .input-text-1, .shipping-address .input-text-1 { width: 317px; }
+
+.next-step { background: url(../images/border-9.png) top left repeat-x; }
+		.next-step b a { color: #feebb7; }
+		.next-step b a:hover { color: #ff6600; }
+
+.order-id { color: #fff; }
+	.order-id a { color: #ff6600; }
+	.order-id a:hover { color: #ff5400; }
+
+
+/* iPad layout */
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+	.billing-address .input-text-1, .shipping-address .input-text-1 { width: 303px; }
+
+}
+
+
+/* iPhone layout */
+
+@media only screen and (max-width: 767px) {
+
+.main-header { padding: 10px 0; }
+
+		.main-content .header .left { background: url(../images/border-10.png) bottom left repeat-x; }
+
+		.checkout-item .error span { float: left; margin: 10px 0 0 0; width: 246px; }
+
+.billing-address { width: 246px; float: left; padding: 25px 0 0 25px; margin: 0; }
+.shipping-address { width: 246px; float: left; padding: 25px 0 25px 25px; }
+
+	.billing-address .input-text-1, .billing-address .input-text-1 { width: 230px; }
+	.billing-address p, .shipping-address p { overflow: hidden; margin: 9px 0 0 0; }
+		.billing-address .items p:first-child label, .shipping-address .items p:first-child label { display: none; }
+	.billing-address label, .shipping-address label { float: left; width: 100%; font-weight: bold; padding: 0 0 3px 0; }
+		.billing-address .checkbox label, .billing-address .checkbox label { display: none; }
+
+	.next-step table { margin: 0 auto; width: auto; }
+	.next-step .button-1 { margin: 0 0 10px 0; }
+	.next-step b { display: block; margin: 0; float: none; text-align: center; }
+
+}

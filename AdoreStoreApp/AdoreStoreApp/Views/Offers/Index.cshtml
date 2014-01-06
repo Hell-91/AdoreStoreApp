@@ -1,0 +1,99 @@
+﻿@model AdoreStoreApp.ViewModels.OffersViewModel
+
+@{
+    ViewBag.Title = "Index";
+    var i = 1;
+}
+
+      <!-- Page title -->
+      <div class="page-title">
+         <div class="container">
+            <h2><i class="color"></i> Offers </h2>
+            <hr />
+         </div>
+      </div>
+      <!-- Page title -->
+      
+      <!-- Page content -->
+      
+      <div class="shop-items">
+         <div class="container">            
+            <div class="row">
+               
+               <div class="col-md-12 col-md-push-0">
+               
+                   <!-- Breadcrumb -->
+                 <ul class="breadcrumb">
+                   <li><a href="index.html">Home</a> <span class="divider"></span></li>
+                   <li class="active">Offers</li>
+                 </ul>
+               
+                 <!-- Items List starts -->
+
+                 <div class="row">
+                         @if (Model.Offers.Count() > 0)
+                          {
+                              foreach (var offer in Model.Offers)
+                              { 
+                                  <!-- Item #1 -->
+                                    <div class="col-md-3 col-sm-3 col-xs-6">
+                                      <div class="item">
+                                        <!-- Use the below link to put HOT icon -->
+                                         @if(offer.OfferOpted)
+                                         {
+                                            <div class="item-icon"><span>Opted</span></div>
+                                         }
+                                        <!-- Item image -->
+                                        <div class="item-image">
+                                          <a href="/Offers/Details/@offer.OfferId"><img src="/Images/@offer.OfferGraphic" class="img-responsive"></a>                                      
+                                        </div>
+                                        <!-- Item details -->
+                                        <div class="item-details">
+                                          <!-- Name -->
+                                          <h5><a href="/Offers/Details/@offer.OfferId">@offer.OfferName</a></h5>
+                                          <div class="clearfix"></div>
+                                          <!-- Para. Note more than 2 lines. -->
+                                          <p>@offer.OfferDescription</p>
+                                          <hr />
+                                          <!-- Price -->
+                                         <p> <a href="/Offers/OptIn/@offer.OfferId" class="btn btn-danger btn-sm">Opt In</a>&nbsp &nbsp <a href="/Offers/OptOut/@offer.OfferId" class="btn btn-danger btn-sm">Opt Out</a></p>
+                                          <div class="clearfix"></div>
+                                        </div>
+                                      </div>
+                                    </div>
+                              }
+                          }    
+                        
+
+                  <!-- Items List ends -->
+                  
+                  
+                     <div class="row">
+                        <div class="col-md-12">
+                                    <!-- Pagination -->
+                                    <ul class="pagination">
+                                      <li><a href="#">&laquo;</a></li>
+                                      <li><a href="#">1</a></li>
+                                      <li><a href="#">2</a></li>
+                                      <li><a href="#">3</a></li>
+                                      <li><a href="#">4</a></li>
+                                      <li><a href="#">5</a></li>
+                                      <li><a href="#">&raquo;</a></li>
+                                    </ul> 
+                        </div>
+                     </div>
+               
+               </div>
+               
+                
+            </div>
+            
+            <div class="sep-bor"></div>
+         </div>
+        </div>
+     </div>
+
+
+
+
+

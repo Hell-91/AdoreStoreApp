@@ -1,0 +1,13 @@
+﻿body {
+  padding-top: 70px;
+}
+
+.offer_row:hover {
+    cursor: pointer;
+    background-color: #d9d9d9;
+}
+
+.form-control:hover {
+    cursor:default;
+}
+

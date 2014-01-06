@@ -1,0 +1,38 @@
+﻿@model AdoreStoreApp.Models.Offer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<ol class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><a href="/Offers/">Offers</a></li>
+  <li class="active">Offer Details</li>
+</ol>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"></h3>
+  </div>
+  <div class="panel-body">
+      
+    <div class="navbar-left">
+        <h4>Offer Name: </h4><p>@Model.OfferName</p>
+        <h4>Description: </h4>@Model.OfferDescription
+        <h4>Start Date: </h4>@Model.OfferStartDate
+        <h4>End Date: </h4>@Model.OfferEndDate
+
+        <br /><br />
+
+        <div class="row">
+          <div class="col-lg-1">
+            <input type="button" value="Share this offer facebook" class="btn btn-primary" />
+          </div><!-- /.col-lg-1 -->
+        </div><!-- /.row -->
+    </div>
+    
+    <img src="\Images\@Model.OfferGraphic" class="navbar-right" style="width: 250px; height: 250px;"/>
+
+  </div>
+</div>
+

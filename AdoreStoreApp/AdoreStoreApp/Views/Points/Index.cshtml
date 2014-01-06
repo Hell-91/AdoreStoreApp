@@ -1,0 +1,46 @@
+﻿@model AdoreStoreApp.ViewModels.PointsViewModel
+
+
+@{
+    ViewBag.Title = "Index";
+    var i = 1;
+}
+
+<ol class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li class="active">Points</li>
+</ol>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">POINTS</div>
+    <div class="panel-body">
+    <p>Points available for each program.</p>
+  </div>
+  <!-- Table -->
+  <table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Program Name</th>
+            <th>Program Description</th>
+            <th>Available Points</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Points.Count() > 0)
+        {
+            foreach (var points in Model.Points)
+            { 
+                <tr>
+                    <td>@i</td>
+                    <td>@points.PointProgramName</td>
+                    <td>@points.PointProgramDescription</td>
+                    <td>@points.PointsAvailable</td>
+                </tr>            
+                i++;
+            }
+        }
+    </tbody>
+  </table>
+</div>

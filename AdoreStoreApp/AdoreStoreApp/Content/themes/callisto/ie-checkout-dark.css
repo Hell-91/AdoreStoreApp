@@ -1,0 +1,12 @@
+/* Default elements */
+
+.item-block-3 { background: url(../images/ie/body-bg-dark-2.jpg) 0 0 repeat; border: #000 1px solid; }
+	.item-block-3 .content { border: #717171 1px solid; }
+
+		.main-header-ie .logo-blank span { color: #fff; }
+
+
+/* Checkout items */
+
+	.checkout-item .message { border: #848484 1px solid; }
+		.checkout-item .message span { background: url(../images/body-bg-dark-1.jpg) 0 0 repeat; border: #333131 1px solid; color: #fff; }

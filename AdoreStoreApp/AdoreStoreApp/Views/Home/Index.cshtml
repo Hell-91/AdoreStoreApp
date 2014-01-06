@@ -1,0 +1,140 @@
+﻿@using AdoreStoreApp.Models
+@using Microsoft.AspNet.Mvc.Facebook.Models
+@model AdoreStoreApp.ViewModels.HomeViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+				<!-- BEGIN .homepage-slider -->
+				<div class="homepage-slider">
+				
+					<!-- BEGIN  #hompage-slider_content -->
+					<div id="hompage-slider_content">
+	
+						<div class="item">
+							<!-- <div class="title">
+								<h3 class="custom-font-1">New 2012 summer apparel collection</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae nibh risus.
+	Morbi dapibus lectus at erat viverra malesuada. <a href="#">Read more</a></p>
+							</div> -->
+							<div class="title">
+								<h4 class="custom-font-1">Brand new hats &amp; nitwear</h4>
+								<h5 class="custom-font-1">starting from just</h5>
+								<h6 class="custom-font-1">$120</h6>
+								<a href="#" class="read-more">Read more</a>
+							</div>
+							<a href="#"><img src="~/Images/callisto/photos/slider-2.jpg" alt="" width="944" /></a>
+						</div>
+	
+						<div class="item">
+							<div class="title">
+								<h3 class="custom-font-1">New 2012 summer apparel collection</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae nibh risus.
+	Morbi dapibus lectus at erat viverra malesuada. <a href="#">Read more</a></p>
+							</div> 
+							<!-- <div class="title">
+								<h4 class="custom-font-1">Brand new hats &amp; nitwear</h4>
+								<h5 class="custom-font-1">starting from just</h5>
+								<h6 class="custom-font-1">$120</h6>
+								<a href="#" class="read-more">Read more</a>
+							</div> -->
+							<a href="#"><img src="~/Images/callisto/photos/slider-1.jpg" alt="" width="944" /></a>
+						</div>
+	
+						<div class="item">
+							<!-- <div class="title">
+								<h3 class="custom-font-1">New 2012 summer apparel collection</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae nibh risus.
+	Morbi dapibus lectus at erat viverra malesuada. <a href="#">Read more</a></p>
+							</div> -->
+							<div class="title">
+								<h4 class="custom-font-1">Brand new hats &amp; nitwear</h4>
+								<h5 class="custom-font-1">starting from just</h5>
+								<h6 class="custom-font-1">$95</h6>
+								<a href="#" class="read-more">Read more</a>
+							</div>
+							<a href="#"><img src="~/Images/callisto/photos/slider-3.jpg" alt="" width="944" /></a>
+						</div>
+	
+						<div class="item">
+							<div class="title">
+								<h3 class="custom-font-1">New 2012 summer apparel collection</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae nibh risus.
+	Morbi dapibus lectus at erat viverra malesuada. <a href="#">Read more</a></p>
+							</div>
+							<!-- <div class="title">
+								<h4 class="custom-font-1">Brand new hats &amp; nitwear</h4>
+								<h5 class="custom-font-1">starting from just</h5>
+								<h6 class="custom-font-1">$120</h6>
+								<a href="#" class="read-more">Read more</a>
+							</div> -->
+							<a href="#"><img src="~/Images/callisto/photos/slider-4.jpg" alt="" width="944" /></a>
+						</div>
+		
+					<!-- END #hompage-slider_content -->
+					</div>
+					
+					<div class="navigation custom-font-1">
+						<table>
+							<tr>
+								<td>
+									<a href="#" class="previous">Previous</a>
+									<span id="pager">
+									<a href="#" class="bullet"></a>
+									<a href="#" class="bullet"></a>
+									<a href="#" class="bullet"></a>
+									<a href="#" class="bullet"></a>
+									</span>
+									<a href="#" class="next">Next</a>
+								</td>
+							</tr>
+						</table>
+					</div>
+
+				<!-- END .homepage-slider --> 
+				</div>
+				
+    
+				<!-- BEGIN .homepage-best-sellers -->
+				<div class="homepage-best-sellers">
+
+					<div class="main-title">
+						<p class="custom-font-1">Available Offers</p>
+					</div>
+
+					<div class="items">
+
+                                                     @if (Model.Offers.Count() > 0)
+                              {
+                                  foreach (var offer in Model.Offers)
+                                  { 
+                                     <div class="item">
+								        <div id="item_@offer.OfferId">
+                                        @if(offer.OfferOpted)
+                                        {
+                                                <div class="item-tag tag-off custom-font-1">
+									                <span>Opted</span>
+								                </div>
+                                        }
+                                        </div>
+								        <div class="image-wrapper-1">
+									        <div class="image">
+										        <a href="/Offers/Details/@offer.OfferId"><img src="~/Images/@offer.OfferGraphic"  alt="" width="94" height="94"></a> 
+									        </div>
+								        </div>
+                                        <div class="text">
+								        <h6><a href="/Offers/Details/@offer.OfferId" class="custom-font-1">@offer.OfferName</a></h6>
+								        @Ajax.ActionLink("Opt-In", "OptIn/" + offer.OfferId, null, new AjaxOptions { UpdateTargetId = "item_" + offer.OfferId, InsertionMode = InsertionMode.Replace, HttpMethod = "GET" }, new { @class = "button-3 custom-font-1 trans-1", @style="margin-top: 5px; padding: 4px; width: 70px; text-align: center;"}) 
+                                        @Ajax.ActionLink("Opt-Out", "OptOut/" + offer.OfferId, null, new AjaxOptions { UpdateTargetId = "item_" + offer.OfferId, InsertionMode = InsertionMode.Replace, HttpMethod = "GET" }, new { @class = "button-3 custom-font-1 trans-1", @style="margin-top: 5px; padding: 4px; width: 70px; text-align: center;"}) 
+                                        </div>
+                                    </div>
+                                  }
+                              }  
+					</div>
+
+				<!-- END .homepage-best-sellers -->
+				</div>
+
+				
